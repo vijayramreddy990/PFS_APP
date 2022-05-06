@@ -47,20 +47,34 @@ const App = () => {
       <Text style={styles.textStyle}>
         Please Enter Initial And Final Readings
       </Text>
-      <Text
-        style={[styles.inputHeaderStyle, isInitalEmpty && styles.inputError]}>
-        Initial Reading
-      </Text>
-      <TextInput
-        style={[styles.input, isInitalEmpty && styles.inputBoxError]}
-        onChangeText={value => handleInitialReading(value, true)}
-        value={initialReading}
-        placeholder="Initial Reading"
-      />
+      <View style={styles.inputContainer}>
+        <Text
+          style={[styles.inputHeaderStyle, isInitalEmpty && styles.inputError]}>
+          Initial Reading
+        </Text>
+        <TextInput
+          style={[styles.input, isInitalEmpty && styles.inputBoxError]}
+          onChangeText={value => handleInitialReading(value, true)}
+          value={initialReading}
+          placeholder="Initial Reading"
+        />
+      </View>
       <View style={styles.inputContainer}>
         <Text
           style={[styles.inputHeaderStyle, isFinalEmpty && styles.inputError]}>
           Final Reading
+        </Text>
+        <TextInput
+          style={[styles.input, isFinalEmpty && styles.inputBoxError]}
+          onChangeText={value => handleFinalReading(value)}
+          value={finalReading}
+          placeholder="Final Reading"
+        />
+      </View>
+      <View style={styles.inputContainer}>
+        <Text
+          style={[styles.inputHeaderStyle, isFinalEmpty && styles.inputError]}>
+          Nozzle
         </Text>
         <TextInput
           style={[styles.input, isFinalEmpty && styles.inputBoxError]}
